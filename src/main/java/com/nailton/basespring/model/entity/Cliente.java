@@ -1,4 +1,4 @@
-package com.nailton.basespring.models.entitys;
+package com.nailton.basespring.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,6 +23,11 @@ public class UsuarioEntity {
 
     @Column(name = "email", unique = true)
     private String email;
+    
+    @Column(name = "sexo")
+    private String sexo;
+
+    
 
     
 }
