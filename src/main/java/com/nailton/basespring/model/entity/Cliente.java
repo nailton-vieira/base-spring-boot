@@ -1,17 +1,31 @@
 package com.nailton.basespring.model.entity;
 
+import com.nailton.basespring.model.dto.ClienteDto;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+
+
+@Entity(name = "Cliente")
+@Table(name = "cliente_db")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 
 public class Cliente {
-
-@Entity
-@Table(name = "cliente_db")
-public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +38,23 @@ public class UsuarioEntity {
     @Column(name = "email", unique = true)
     private String email;
     
-    @Column(name = "sexo")
+    @Enumerated(EnumType.STRING)
     private String sexo;
 
+    @Embedded
+    private Endereco endereco;
+
+    public Cliente(ClienteDto dados) {
+      
+        this.nome = dados.nome();
+        this.email = dados.email();
+       // this.sexo = dados.sexo();
+       // this.endereco = new Endereco(dados.endereco());
+    }
+    
+
     
 
     
 }
-}
+
