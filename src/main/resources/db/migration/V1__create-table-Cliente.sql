@@ -1,4 +1,4 @@
-create table cliente_tb(
+ create table cliente_tb(
 
     id bigint not null auto_increment,
     nome varchar(100) not null,

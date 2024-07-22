@@ -1,6 +1,8 @@
 package com.nailton.basespring.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,9 +25,11 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<Cliente> salvarCliente(final @RequestBody Cliente cliente ) {
-        return new ResponseEntity<Cliente>(this.clienteService.salvarCliente(cliente), HttpStatus.CREATED);
+    public ResponseEntity<Cliente> salvarCliente(final @RequestBody Cliente objCliente ) {
+        return new ResponseEntity<Cliente>(this.clienteService.salvarCliente(objCliente), HttpStatus.CREATED);
     }
- 
+
+    
+    
 
 }
