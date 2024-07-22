@@ -16,7 +16,7 @@ import lombok.Data;
 
 
 @Entity
-@Table(name = "cliente_db")
+@Table(name = "cliente_tb")
 @Data
 public class Cliente {
 
@@ -28,22 +28,23 @@ public class Cliente {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "email", unique = true)
+    @Column(name = "email")
     private String email;
     
-    @Enumerated(EnumType.STRING)
+   /* @Enumerated(EnumType.STRING)
     private String sexo;
 
     @Embedded
     private Endereco endereco;
 
-    public Cliente(ClienteDto dados) {
+     public Cliente(ClienteDto dados) {
       
         this.nome = dados.nome();
         this.email = dados.email();
        // this.sexo = dados.sexo();
        // this.endereco = new Endereco(dados.endereco());
     }
+    */
     
 
     

@@ -15,7 +15,7 @@ import com.nailton.basespring.service.ClienteService;
 
 
 @RestController
-@RequestMapping("clientes")
+@RequestMapping(path = "/clientes")
 public class ClienteController {
 
    
