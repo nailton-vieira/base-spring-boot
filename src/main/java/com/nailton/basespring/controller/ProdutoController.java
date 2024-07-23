@@ -16,7 +16,8 @@ public class ProdutoController {
 
     @PostMapping("/produtos")
     public Produto cadastrarProduto(@RequestBody Produto objProduto){
-            return objProduto;
+            return produtoepository.save(objProduto);
+            
 
         //return produtoepository.save(objProduto);
     }
